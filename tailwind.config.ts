@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        whitishText: '#f9fafb',
+        grayishText: '#9ca3af',
+        activeGreen: '#10b981'
       },
     },
   },
