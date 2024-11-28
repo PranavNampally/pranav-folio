@@ -19,7 +19,8 @@ export const DATA = {
     "Node.js",
     "Python",
     "C++",
-    "C"
+    "C",
+    'HTML'
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
