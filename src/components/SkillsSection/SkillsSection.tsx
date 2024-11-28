@@ -22,7 +22,7 @@ const ImageGrid = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden px-4 py-16">
       {Array.from({ length: 4 }).map((_, rowIndex) => (
         <div
           key={rowIndex}
