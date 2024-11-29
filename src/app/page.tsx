@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import HyperText from "@/components/ui/hyper-text";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -18,12 +19,26 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
+              <div className="flex items-center gap-2 md:gap-3 flex-wrap">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-3xl shrink-0 font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                text={`Hi, I'm `}
               />
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <HyperText
+                  className="inline-block text-3xl shrink-0 w-fit p-0 font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                  text={` ${DATA.name.split(" ")[0]} `}
+                />
+              </BlurFade>
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY}
+                className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yOffset={8}
+                text={` 👋`}
+              />
+              </div>
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
                 delay={BLUR_FADE_DELAY}

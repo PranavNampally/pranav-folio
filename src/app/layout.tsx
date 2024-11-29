@@ -66,12 +66,10 @@ export default function RootLayout({
           <TooltipProvider delayDuration={0}>
             <div className="pointer-events-none fixed z-30 mx-auto mb-4 flex origin-bottom h-full max-w-20 w-48 min-h-[100dvh] -ml-[5rem]">
               <div className="absolute bottom-0 inset-x-0 h-full w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_left,black,transparent)] dark:bg-background"></div>
-
             </div>
             {children}
             <div className="pointer-events-none fixed z-30 mx-auto mb-4 flex origin-bottom h-full max-w-20 w-48 min-h-[100dvh] ml-[39rem] -mr-[5rem]">
               <div className="absolute bottom-0 inset-x-0 h-full w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_right,black,transparent)] dark:bg-background"></div>
-
             </div>
             <AnimatedGridPattern
               numSquares={30}
