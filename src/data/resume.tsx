@@ -12,15 +12,21 @@ export const DATA = {
     "Hey!, I'm a frontend web developer currently working at ZEE Limited from past 1.5 year and have contributed to many innovative projects at my company. In the past, [I've completed my bachelor's in computer science and engineering from IIT Dharwad](/#education), interned at tech companies in Bangalore, and [competed in SIH in my final year](/#hackathons).",
   avatarUrl: "/me.jpg",
   skills: [
-    "React",
+    "React.js",
     "Next.js",
     "Typescript",
     "Javascript",
+    'Redux',
+    'Zustand',
     "Node.js",
     "Python",
-    "C++",
-    "C",
-    'HTML'
+    'HTML',
+    'CSS',
+    'SCSS',
+    'Tailwind',
+    'Google Ads',
+    'Google Analytics',
+    'Mixpanel'
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
