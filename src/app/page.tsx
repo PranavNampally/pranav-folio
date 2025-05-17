@@ -1,3 +1,5 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -5,14 +7,17 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import HyperText from "@/components/ui/hyper-text";
+import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { DATA } from "@/data/resume";
-import Link from "next/link";
 import Markdown from "react-markdown";
+import { useTheme } from "next-themes";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  const theme = useTheme();
+  const shadowColor = theme.resolvedTheme === "dark" ? "white" : "black";
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10 z-40 relative bg-background py-12 sm:py-24 dark:bg-background">
       <section id="hero">
@@ -20,24 +25,28 @@ export default function Page() {
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <div className="flex items-center gap-2 md:gap-3 flex-wrap">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl shrink-0 font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm `}
-              />
-              <BlurFade delay={BLUR_FADE_DELAY}>
-                <HyperText
-                  className="inline-block text-3xl shrink-0 w-fit p-0 font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                  text={` ${DATA.name.split(" ")[0]} `}
+                <BlurFadeText
+                  delay={BLUR_FADE_DELAY}
+                  className="text-3xl shrink-0 font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                  yOffset={8}
+                  text={`Hi, I'm `}
                 />
-              </BlurFade>
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={` 👋`}
-              />
+                <BlurFade delay={BLUR_FADE_DELAY}>
+                  <h1 className="text-balance text-3xl shrink-0 w-fit p-0 font-bold leading-none tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    <LineShadowText
+                      className="italic"
+                      shadowColor={shadowColor}
+                    >
+                      {DATA.name.split(" ")[0]}
+                    </LineShadowText>
+                  </h1>
+                </BlurFade>
+                <BlurFadeText
+                  delay={BLUR_FADE_DELAY}
+                  className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                  yOffset={8}
+                  text={` 👋`}
+                />
               </div>
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -47,7 +56,11 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className="object-contain" />
+                <AvatarImage
+                  alt={DATA.name}
+                  src={DATA.avatarUrl}
+                  className="object-contain"
+                />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
@@ -179,12 +192,7 @@ export default function Page() {
                   I like building things
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  During my time in university, I participated in a few hackathons where I collaborated with a team to build a functional prototype within 48 hours. It was a valuable experience that strengthened my teamwork and problem-solving skills.
                 </p>
               </div>
             </div>
