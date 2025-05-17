@@ -105,12 +105,20 @@ export const DATA = {
       end: "2023",
     },
     {
-      school: "TSBIE",
+      school: "Guru Junior College, Hyderabad",
       href: "https://tgbie.cgg.gov.in/home.do",
       degree: "Intermediate (11th, 12th)",
       logoUrl: "/tsbie.png",
       start: "2017",
       end: "2019",
+    },
+    {
+      school: "Kendriya Vidyalaya No.1 Uppal, Hyderabad",
+      href: "https://no1uppal.kvs.ac.in/",
+      degree: "SSC (10th)",
+      logoUrl: "/kvs.svg",
+      start: "2016",
+      end: "2017",
     },
   ],
   projects: [
