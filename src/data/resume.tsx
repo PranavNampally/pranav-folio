@@ -30,7 +30,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "https://drive.google.com/file/d/11zuttTTnyXGeeucj0hfUQvuKuBn39SbN/view?usp=sharing", icon: DownloadIcon, label: "Resume" },
+    { href: "https://drive.google.com/file/d/19OM9NS_ey6TjIk9S3JHdvMnA2gBOPy3U/view?usp=drivesdk", icon: DownloadIcon, label: "Resume" },
   ],
   contact: {
     email: "pranavnampally.work@gmail.com",
